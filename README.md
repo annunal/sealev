@@ -40,6 +40,14 @@ The response will be:
 56003 Station 56003 - Indian Ocean 2     -     630km NNE of Dampier -15.019/118.073
 
 ```
+## Response of the command getDevs(<database>)
+a list of devices; each device is a dictionary composed of:
+- id   identifier of the device (will be used to retrieve data)
+- location   place of the device
+- country   country of the device
+- lat/lon   coordinates of the device
+- [group]   if it exists it represents a subclass of the database
+
 the keyword 'id' contains the reference identifier to retrieve the level data.
 
 Suppose you want to retrieve the level values of one specific device, such as 21414 (Station 21414 - AMCHITKA - 170 NM South of Amchitka), you can give the following command:
@@ -48,7 +56,7 @@ values=sl.getLevel('DART','21414')
 for j in range(len(values['x'])):
     print(values['x'][j],values['y'][j])
 ```
-The response is a list of data if the device has recent recorded data:
+The response of the example above is a list of data if the device has recent recorded data:
 ```
 2024-10-02 00:00:00 5442.868
 2024-10-02 00:15:00 5442.874
