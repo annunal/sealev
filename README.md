@@ -50,6 +50,16 @@ for j in range(len(values['x'])):
 ```
 The response is a list of data if the device has recent recorded data:
 ```
+You can retrieve data from the past adding the keyword tmin, tmax in the getLevel call. Example
+```
+values=sl.getLevel('GLOSS @vliz','mnza','2022-09-19 00:00:00','2022-09-21 00:00:00')
+for j in range(len(values['x'])):
+    print(values['x'][j],values['y'][j])
+```
+The example above retrieves and print the data related to the Tsunami event in Mexico.
+![mexico_mnza](https://github.com/user-attachments/assets/a39715ed-7fb7-4e30-a16f-fccd189e6c83)
+
+
 2024-10-02 00:00:00 5442.868
 2024-10-02 00:15:00 5442.874
 2024-10-02 00:30:00 5442.882
