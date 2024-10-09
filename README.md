@@ -96,3 +96,6 @@ plt.xlabel('Date/Time')
 plt.ylabel('Level (m)')
 plt.title('M7.6 MEXICO, 2022-09-19 18:05:00')
 plt.show()
+```
+The following plot would be generated:
+![Figure_1](https://github.com/user-attachments/assets/1e22fe49-07ce-454c-b1c9-f360a580d3e1)
