@@ -109,3 +109,20 @@ sl=seaLevelDB()
 values=sl.getLevel('GLOSS @vliz','mnza','2022-09-19 00:00:00','2022-09-21 00:00:00')
 sl.to_csv(values,'output.csv')
 ```
+In some cases (i.e. JRC_TAD database), many other quantities are retrieved from the database in addition to the level.  In these cases the available keys are many more thabn x and y, that however always eist.  The other quantities can also be retrieved.
+The xample below collects the data of Cadiz (IDSL-06) from the JRC database and creates a plot of the battery voltage.
+```
+import matplotlib.pyplot as plt
+from sealev.sldb import seaLevelDB
+sl=seaLevelDB()
+#
+values=sl.getLevel('JRC_TAD','IDSL-06','2024-10-03 00:00:00','2024-10-08 00:00:00')
+print('List of possible quantities to plot:',values.keys())
+plt.plot(values['x'],values['anag3'])
+plt.xlabel('Date/Time')
+plt.ylabel('Battery voltage (volt)')
+plt.title('Cadiz device IDSL-06')
+plt.show()
+```
+The output plot is the folllowing:
+![voltage](https://github.com/user-attachments/assets/ded5d7ed-0fcf-46cc-bc52-25d12bcc80e3)
