@@ -84,7 +84,7 @@ The example above retrieves and print the data related to the Tsunami event in M
 ![mexico_mnza](https://github.com/user-attachments/assets/a39715ed-7fb7-4e30-a16f-fccd189e6c83)
 
 The response is a dctionary containing the following keys:
--   x   is a list containing a list of datatime values representing the time of the level
--   y   sea level of the device (m)
+-   x   (list) containing a series of datatime values representing the time of the level
+-   y   (list) containing a series of sea level values of the device (m)
 each point of the x list will have a corresponding point in y
   
