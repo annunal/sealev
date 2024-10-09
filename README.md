@@ -9,7 +9,7 @@ After the installation, it is possible to use the package in python:
 ```
 python
 ```
-# List of available databases: getDB()
+## List of available databases: getDB()
 Once you are in python environment you can give the following collamnds
 ```
 from sealev.sldb import seaLevelDB
@@ -22,7 +22,7 @@ for db in dbs:
    print(db)
 ```
 You will get a list of all the database that you can query.
-# LIst the devices of a database: getDevs(<database>)
+# LIst the devices of a database: getDevs(\<database\>)
 
 You can select one specific database, i.e. DART, and requst the list of available devices:
 ```
@@ -54,7 +54,7 @@ The response if a list of devices; each device is a dictionary composed of:
 - [group]   if it exists it represents a subclass of the database
 
 the keyword 'id' contains the reference identifier to retrieve the level data.
-# Retrieve sea level of a device: getLevel(<database>,<device>,[tmin],[tmax])
+## Retrieve sea level of a device: getLevel(\<database\>,\<device\>, \[\<tmin\>\],\[\<tmax\>\])
 Suppose you want to retrieve the level values of one specific device, such as 21414 (Station 21414 - AMCHITKA - 170 NM South of Amchitka), you can give the following command:
 ```
 from sealev.sldb import seaLevelDB
