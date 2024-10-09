@@ -109,6 +109,7 @@ sl=seaLevelDB()
 values=sl.getLevel('GLOSS @vliz','mnza','2022-09-19 00:00:00','2022-09-21 00:00:00')
 sl.to_csv(values,'output.csv')
 ```
+## Extract other quantities
 In some cases (i.e. JRC_TAD database), many other quantities are retrieved from the database in addition to the level.  In these cases the available keys are many more thabn x and y, that however always eist.  The other quantities can also be retrieved.
 The xample below collects the data of Cadiz (IDSL-06) from the JRC database and creates a plot of the battery voltage.
 ```
