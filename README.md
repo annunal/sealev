@@ -87,4 +87,12 @@ The response is a dctionary containing the following keys:
 -   x   (list) containing a series of datatime values representing the time of the level
 -   y   (list) containing a series of sea level values of the device (m)
 each point of the x list will have a corresponding point in y
+In the example above, if you have setup the matplotlib package (pip install matplotlib), you can plot the quantities with the commands:
   
+```
+import matplotlib.pyplot as plt
+plt.plot(values['x'],values['y'])
+plt.xlabel('Date/Time')
+plt.ylabel('Level (m)')
+plt.title('M7.6 MEXICO, 2022-09-19 18:05:00')
+plt.show()
