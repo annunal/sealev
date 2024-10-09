@@ -114,6 +114,8 @@ plt.ylabel('Level (m)')
 plt.title('Clearwater Beach (FL), Cyclone Helene-24')
 plt.show()
 ```
+the output will be:
+![helene](https://github.com/user-attachments/assets/be44627b-a0c1-492b-a0a1-ca90463c7b2c)
 
 ##  Export to csv file:  to_csv(values,fnameout)
 After having retrieved the values dictionary, you can export in a csv file.  Example
@@ -124,7 +126,6 @@ sl=seaLevelDB()
 values=sl.getLevel('GLOSS @vliz','mnza','2022-09-19 00:00:00','2022-09-21 00:00:00')
 sl.to_csv(values,'output.csv')
 ```
-![helene](https://github.com/user-attachments/assets/be44627b-a0c1-492b-a0a1-ca90463c7b2c)
 
 ## Extract other quantities
 In some cases (i.e. JRC_TAD database), many other quantities are retrieved from the database in addition to the level.  In these cases the available keys are many more thabn x and y, that however always eist.  The other quantities can also be retrieved.
