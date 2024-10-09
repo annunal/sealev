@@ -74,6 +74,8 @@ The response of the example above is a list of data if the device has recent rec
 ```
 You can retrieve data from the past adding the keyword tmin, tmax in the getLevel call. Example
 ```
+from sealev.sldb import seaLevelDB
+sl=seaLevelDB()
 values=sl.getLevel('GLOSS @vliz','mnza','2022-09-19 00:00:00','2022-09-21 00:00:00')
 for j in range(len(values['x'])):
     print(values['x'][j],values['y'][j])
