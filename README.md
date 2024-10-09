@@ -99,3 +99,13 @@ plt.show()
 ```
 The following plot would be generated:
 ![Figure_1](https://github.com/user-attachments/assets/1e22fe49-07ce-454c-b1c9-f360a580d3e1)
+
+##  Export to csv file:  to_csv(values,fnameout)
+After having retrieved the values dictionary, you can export in a csv file.  Example
+
+```
+from sealev.sldb import seaLevelDB
+sl=seaLevelDB()
+values=sl.getLevel('GLOSS @vliz','mnza','2022-09-19 00:00:00','2022-09-21 00:00:00')
+sl.to_csv(values,'output.csv')
+```
