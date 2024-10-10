@@ -145,3 +145,26 @@ plt.show()
 ```
 The output plot is the folllowing:
 ![voltage](https://github.com/user-attachments/assets/ded5d7ed-0fcf-46cc-bc52-25d12bcc80e3)
+
+## Search a sea level station: search(\<db\>,\<keyword\>)
+To search a device using the name or the id as keyword use the search command:
+```
+from sealev.sldb import seaLevelDB
+sl=seaLevelDB()
+details=sl.search('NOAA TC','Clearwater')
+print('detail=',detail)
+```
+the reply will be:
+```
+detail= [{'location': 'Clearwater Beach', 'id': '8726724', 'lat': 27.978333, 'lon': -82.831667, 'country': '', 'group': ''}]
+```
+
+## plot a device using id:  plot(\<db\>,\<devID\>,\[\<tmin\>\],\[\<tmax\>\])
+This command will perform the plot as shown above.
+```
+from sealev.sldb import seaLevelDB
+sl=seaLevelDB()
+details=sl.search('NOAA TC','Clearwater')
+id=details[0]['id']
+sl.plot('NOAA TC',id)
+```
