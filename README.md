@@ -146,7 +146,8 @@ plt.show()
 The output plot is the folllowing:
 ![voltage](https://github.com/user-attachments/assets/ded5d7ed-0fcf-46cc-bc52-25d12bcc80e3)
 
-## Search a sea level station: search(\<db\>,\<keyword\>)
+## Search a sea level station
+### By keyword: search(\<db\>,word=\<keyword\>)
 To search a device using the name or the id as keyword use the search command:
 ```
 from sealev.sldb import seaLevelDB
@@ -158,6 +159,37 @@ the reply will be:
 ```
 detail= [{'location': 'Clearwater Beach', 'id': '8726724', 'lat': 27.978333, 'lon': -82.831667, 'country': '', 'group': ''}]
 ```
+
+### By distance from a point: search(\<db\>,pointDistKM=\<PD\>)
+PD is a list of (lat,lon,distKM)
+Suppose you want to search all the devices within 300 km from the point lat=26.131667, lon=-81.8075.
+PD=(26.131667, -81.8075, 300)
+```
+from sealev import seaLevelDB
+sl=seaLevelDB()
+
+db='NOAA TC' 
+listDevs=sl.search(db,pointDistKM=(26.131667, -81.8075, 300))
+for dev in listDevs:
+	print(dev['id'],dev['location'])
+```
+the response will be:
+```
+8722670 Lake Worth Pier, Atlantic Ocean
+8722956 South Port Everglades
+8723214 Virginia Key
+8723970 Vaca Key, Florida Bay
+8724580 Key West
+8725114 Naples Bay, North
+8725520 Fort Myers
+8726384 Port Manatee
+8726520 St. Petersburg
+8726607 Old Port Tampa
+8726674 East Bay
+8726724 Clearwater Beach
+
+```
+
 
 ## plot a device using id:  plot(\<db\>,\<devID\>,\[\<tmin\>\],\[\<tmax\>\])
 This command will perform the plot as shown above.
