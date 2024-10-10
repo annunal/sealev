@@ -166,5 +166,7 @@ from sealev.sldb import seaLevelDB
 sl=seaLevelDB()
 details=sl.search('NOAA TC','Clearwater')
 id=details[0]['id']
-sl.plot('NOAA TC',id)
+sl.plot('NOAA TC',id,'2024-10-05 00:00:00','2024-10-11 00:00:00')
 ```
+![clearwater](https://github.com/user-attachments/assets/43ef98be-4beb-46f7-b479-980213c2d258)
+
