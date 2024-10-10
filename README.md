@@ -191,7 +191,7 @@ the response will be:
 ```
 
 
-## plot a device using id:  plot(\<db\>,\<devID\>,\[\<tmin\>\],\[\<tmax\>\])
+## Plot a device using id:  plot(\<db\>,\<devID\>,\[\<tmin\>\],\[\<tmax\>\])
 This command will perform the plot as shown above.
 ```
 from sealev.sldb import seaLevelDB
@@ -202,3 +202,19 @@ sl.plot('NOAA TC',id,'2024-10-05 00:00:00','2024-10-11 00:00:00')
 ```
 ![clearwater](https://github.com/user-attachments/assets/43ef98be-4beb-46f7-b479-980213c2d258)
 
+
+## Get a map of a list of devices:  sl.mapDevs(\<devList\>)
+If you want to see where the list of devices is located you can use the mapDevs option.
+Example
+```
+from sealev import seaLevelDB
+sl=seaLevelDB()
+
+db='NOAA TC'
+#create a list of devices as shown in the search example above 
+listDevs=sl.search(db,pointDistKM=(26.131667, -81.8075, 300))
+# map the devices
+sl.mapDevs(listDevs)
+```
+This script will provide the following image:
+![map](https://github.com/user-attachments/assets/c2e566ef-cc76-465a-b23e-1f18611958c3)
